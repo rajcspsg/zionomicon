@@ -2,8 +2,14 @@ ThisBuild / version := "0.1.0-SNAPSHOT"
 
 ThisBuild / scalaVersion := "2.13.8"
 
+val zioVersion = "2.0.2"
 val commonSettings = Seq(
-  libraryDependencies += "dev.zio" %% "zio" % "2.0.2"
+  libraryDependencies ++= Seq(
+    "dev.zio" %% "zio" % zioVersion,
+    "dev.zio" %% "zio-test" % zioVersion,
+    "dev.zio" %% "zio-test-sbt" % zioVersion
+
+  )
 )
 
 lazy val root = (project in file("."))
@@ -20,5 +26,6 @@ val c1_first_steps = (project in file("c1-first-steps"))
 
 val c2_testing = (project in file("c2-testing"))
   .settings(
-    name := "c2_testing"
+    name := "c2_testing",
+    commonSettings
   )
