@@ -29,3 +29,9 @@ val c2_testing = (project in file("c2-testing"))
     name := "c2_testing",
     commonSettings
   )
+
+val c04_zio_error_model = (project in file("c04-zio-error-model"))
+  .settings(
+    name := "c04_zio_error_model",
+    commonSettings
+  )
